@@ -1,0 +1,31 @@
+<template>
+    <CBreadcrumb class="d-md-down-none me-auto mb-0">
+        <CBreadcrumbItem v-for="item in breadcrumbs" :key="item" :href="item.active ? '' : item.path"
+            :active="item.active">
+            {{ item.name }}
+        </CBreadcrumbItem>
+    </CBreadcrumb>
+</template>
+
+<script>
+import { onMounted, ref } from 'vue'
+
+export default {
+    name: 'AppBreadcrumb',
+    setup() {
+        const breadcrumbs = ref();
+
+        const getBreadcrumbs = () => {
+            return [];
+        }
+
+        onMounted(() => {
+            breadcrumbs.value = getBreadcrumbs()
+        })
+
+        return {
+            breadcrumbs,
+        }
+    },
+}
+</script>

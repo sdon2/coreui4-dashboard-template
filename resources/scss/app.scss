@@ -1,0 +1,15 @@
+// Override variables
+@import "variables";
+
+// Left to right config
+$enable-ltr: true;
+$enable-rtl: true;
+
+// CoreUI styles
+@import "~@coreui/coreui/scss/coreui";
+
+// Layout
+@import "layout";
+
+// Custom Styles
+@import "custom";
